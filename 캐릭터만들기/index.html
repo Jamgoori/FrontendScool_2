@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>캐릭터</title>
+        <style>
+                    @keyframes 귀오른쪽 {
+            from {
+                transform: rotate(30deg);
+            }
+            to {
+                transform: rotate(40deg) translate(10px);
+            }
+        }
+        @keyframes 귀왼쪽 {
+            from {
+                transform: rotate(-30deg);
+            }
+            to {
+                transform: rotate(-40deg) translate(-10px);
+            }
+        }
+        @keyframes turn {
+  0% { transform: rotate(0deg) }
+  25% { transform: rotate(-15deg) }
+  100% { transform: rotate(360deg) scale(1.4)}
+} 
+            *,
+            *:after,
+            *:before {
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: sandybrown;
+            }
+            .pig {
+                position: relative;
+                margin: 50px auto;
+                width: 400px;
+                height: 450px;
+            }
+            .pig .face{
+                position: absolute;
+                bottom: 0;
+                width: 400px;
+                height: 425px;
+                border-radius: 100%;
+                border: 10px solid black;
+                background-color: rgb(240, 173, 184);
+            }
+            .pig .ear {
+                position: absolute;
+                top: 0;
+                width: 135px;
+                height: 135px;
+                border: 10px solid black;
+                border-radius: 16% 84% 1% 99%  ;
+                background-color: rgb(240, 173, 184);
+            }
+            .pig .ear.left {
+                left: 1px;
+                animation: 귀왼쪽 1s infinite alternate;
+                animation-delay: 1s;
+            }
+            .pig .ear.right {
+                right: 1px;
+                border-radius: 84% 16% 99% 1%;
+                animation: 귀오른쪽 1s infinite alternate;
+                animation-delay: 1s;
+            }
+            .pig .earline.left {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 60px;
+            background-color: #000;
+            border: 5px solid #000;
+            border-radius: 30%;
+            transform: rotate(90deg);
+            border-radius: 10% 0 0 60%;
+        }
+        .pig .eye.left {
+            border: 10px solid black;
+            background-color: white;
+            position: absolute;
+            top: 140px;
+            left: 85px;
+            width: 90px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        
+        .pig .eye.right {
+            border: 10px solid black;
+            background-color: white;
+            position: absolute;
+            top: 140px;
+            right: 85px;
+            width: 90px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .eye .eyehole {
+            position: absolute;
+            border-radius: 50%;
+            background-color: black;
+            border: 5px solid black;
+            width: 40px;
+            height: 40px;
+            top: 10px;
+        }
+        
+        .eyehole.left {
+            left:26px;
+        }
+        .eyehole.right{
+            background-color: black;
+            right: 23px;
+        }
+        
+        .pig .nose {
+            position: absolute;
+            border: 10px solid black;
+            border-radius: 100%;
+            background-color: rgb(240, 173, 184);
+            width: 180px;
+            height: 140px;
+            top: 250px;
+            left: 112px;
+
+        }
+        .nose .nosehole{
+            position: absolute;
+            border: 10px solid black;
+            height: 30px;
+            width: 30px;
+            background-color: black;
+            top: 50px;
+            border-radius: 80%;
+        }
+
+        .nosehole.left {
+            left: 30px;
+        }
+        .nosehole.right {
+            right: 30px;
+        }
+
+        .nose:hover {
+            animation-name: turn;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="pig">
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+            <div class="face"></div>
+            <div class="eye left">
+                <div class="eyehole left"></div>
+            </div>
+            <div class="eye right">
+                <div class="eyehole right"></div>
+            </div>
+            <div class="nose">
+                <div class="nosehole left"></div>
+                <div class="nosehole right"></div>
+            </div>
+        </div>
+    </body>
+</html>
